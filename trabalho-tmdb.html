@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <title>Trabalho TMDB II - Catálogo de Filmes</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="index">
+
+    <section id="homeHero">
+        <div id="heroBg"></div>
+        
+        <header id="topBar">
+            <div class="wrap">
+                <div class="logo">
+                    <img src="logoMpFilmes.png" alt="MP Filmes">
+                </div>
+                
+                <div class="search-container">
+                    <h1 class="carouselTitle" id="searchTitle">O que vamos assistir hoje?</h1>
+                    <div class="search-input-wrapper">
+                        <input type="text" id="searchInput" class="search-page-input" placeholder="Pesquisar...">
+                    </div>
+                </div>
+
+                <div class="menu">
+                    <a href="#" class="hover item active">Catálogo TMDB</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="wrap">
+            <!-- Espaço reservado para o hero quando não há busca centralizada -->
+        </div>
+    </section>
+
+    <main>
+        <!-- Seção de Detalhes (Fica escondida até o clique) -->
+        <section id="movieDetailsSection">
+            <div id="launcherBg"></div>
+            <div class="wrap">
+                <div id="pG">
+                    <div class="close-details" id="closeDetails">&times;</div>
+                    <img id="modalPoster" class="stupidPoster" src="" alt="Poster">
+                    <div class="ai">
+                        <h1 id="modalSubtitle">DISPONÍVEL NOS CINEMAS</h1>
+                        <h2 id="modalTitle">Título do Filme</h2>
+                        <div class="infos">
+                            <div class="year" id="modalYear">2024</div>
+                            <div class="dur">
+                                <i class="icon-clock">
+                                    <svg viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8l-19.3 26.6c-3.9 5.3-11.4 6.5-16.7 2.6z"/></svg>
+                                </i>
+                                <span id="modalDuration">120 min</span>
+                            </div>
+                            <div class="rating" id="modalRating">6.5</div>
+                            <div class="stars">
+                                <div class="b" style="background: url('https://vizer.lol/assets/img/stars.png');"></div>
+                                <div class="f" id="modalStars" style="background: url('https://vizer.lol/assets/img/stars.png'); width: 65%;"></div>
+                            </div>
+                        </div>
+                        <div class="desc" id="modalDesc">
+                            Descrição do filme aqui...
+                        </div>
+                        <div class="buttons">
+                            <a href="#" class="adasd play" id="watchMovieButton">
+                                <i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></i>
+                                NOS CINEMAS
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="listingHome">
+            <div class="wrap">
+                <h2 class="carouselTitle">Filmes em Cartaz</h2>
+                <div class="carousel-container">
+                    <button class="carousel-btn prev" onclick="scrollCarousel('moviesList', -1)">&#10094;</button>
+                    <div id="moviesList" class="generalMoviesList">
+                        <p style="color: #fff; opacity: 0.5;">Carregando filmes...</p>
+                    </div>
+                    <button class="carousel-btn next" onclick="scrollCarousel('moviesList', 1)">&#10095;</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="upcomingListing">
+            <div class="wrap">
+                <h2 class="carouselTitle">Breve nos Cinemas</h2>
+                <div class="carousel-container">
+                    <button class="carousel-btn prev" onclick="scrollCarousel('upcomingList', -1)">&#10094;</button>
+                    <div id="upcomingList" class="generalMoviesList">
+                        <p style="color: #fff; opacity: 0.5;">Carregando próximos lançamentos...</p>
+                    </div>
+                    <button class="carousel-btn next" onclick="scrollCarousel('upcomingList', 1)">&#10095;</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <div class="copyright">
+                © 2026 - Exercício TMDB II - Desenvolvido por Matheus PM
+            </div>
+            <p>Este projeto consome dados da API do The Movie Database (TMDB).</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
